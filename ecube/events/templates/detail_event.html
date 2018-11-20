@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,5 +8,15 @@
 <body>
 	<h1>HOla</h1>
 	{{ event.name }}
+	<img src="{{ event.img_event.url }}" alt="">
+	<p>{{ event.description }}</p>
+	<p>{{ event.start }}</p>
+	<p>{{ event.finish }}</p>
+	<p>{{ event.address }}</p>
+	<p>{{ event.place }}</p>
+	<p>{{ event.categories }}</p>
+	<p>{{ event.official }}</p>
+	<p>{{ event.sponsor }}</p>
+
 </body>
 </html>
