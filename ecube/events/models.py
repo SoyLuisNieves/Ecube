@@ -7,7 +7,7 @@ from django.db import models
 class Event(models.Model):
 	name = models.CharField(max_length=60)
 	img_event = models.ImageField(upload_to='img_events')
-	descirption = models.TextField()
+	description = models.TextField()
 	start = models.DateTimeField()
 	finish = models.DateTimeField()
 	address = models.TextField()
