@@ -6,7 +6,7 @@ from .models import Event
 from .forms import EventForm
 
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 def home_events(request):
     queryset = Event.objects.all()
@@ -42,7 +42,7 @@ def event_update(request, id):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-        return HttpResponseRedirect(instance.get_absolute_url())
+        return redirect("events.views.home_events")
 
     context = {
     "title": instance.name,
