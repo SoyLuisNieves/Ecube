@@ -10,11 +10,13 @@ class Event(models.Model):
 	description = models.TextField()
 	start = models.DateTimeField()
 	finish = models.DateTimeField()
+	capacity = models.PositiveIntegerField(blank=True)
 	address = models.TextField()
 	place = models.CharField(max_length=150)
 	categories = models.TextField()
 	official = models.BooleanField(default=0)
 	sponsor = models.ForeignKey(Sponsor)
+	active = models.BooleanField(default=True)
 
 	def __unicode__(self):
 		return self.name
