@@ -4,9 +4,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato|Lilita+One" rel="stylesheet">
-
-	<link rel="stylesheet" href="{% static "css/app.css" %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static "css/styles.css" %}">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
@@ -45,29 +46,55 @@
 </nav>
 <br>
 <div class="row">
-  <div class="col- col-md-2"></div>
+  <div class="col-6 col-md-2"></div>
   <div class="col-12 col-md-8">
-  	<h1 class="text-center TitleFont">{{ event.name }}</h1>
+
+  	<h1 class="text-center FontTitle">{{ event.name }}</h1>
   	<hr>
   	<img src="{{ event.img_event.url }}" class="img-thumbnail rounded" alt="">
-  	<p class="ContentFont">{{ event.description }}</p>
+  	<p class="FontContent">{{ event.description }}</p>
+  	
+
+  	<div class="row align-items-center">
+  		<div class="col-12 col-md-12 align-content-center">
+  			<p class="text-center">
+  				<button for="" class="btn btn-success">
+  					<b>Inicia</b> <span class="badge badge-light">{{ event.start }}</span>
+  				</button>
+  				<button for="" class="btn btn-danger">
+  					<b>Termina</b> <span class="badge badge-light">{{ event.finish }}</span>
+  				</button>
+  			</p>
+  		</div>
+  	</div>
+
+  	<div class="row">
+  		<div class="col-12 col-md-12">
+  			<table class="table table-hover">
+  			<tbody>
+			    <tr>
+			      <td><i class="fas fa-map-marked-alt"></i> {{ event.address }}</td>
+			    </tr>
+			    <tr>
+			      <td><i class="fas fa-place-of-worship"></i> {{ event.place }}</td>
+			    </tr>
+			    <tr>
+			      <td><i class="fas fa-cube"></i> {{ event.categories }}</td>
+			    </tr>
+			    <tr>
+			      <td><i class="fas fa-user-circle"></i> {{ event.sponsor }}</td>
+			    </tr>
+
+  </tbody>
+</table>
+  		</div>
+  	</div>
+  	
+  	
   </div>
   <div class="col-6 col-md-2"></div>
 </div>
 
-
-
-	<h1>HOla</h1>
-	{{ event.name }}
-	<img src="{{ event.img_event.url }}" alt="">
-	<p>{{ event.description }}</p>
-	<p>{{ event.start }}</p>
-	<p>{{ event.finish }}</p>
-	<p>{{ event.address }}</p>
-	<p>{{ event.place }}</p>
-	<p>{{ event.categories }}</p>
-	<p>{{ event.official }}</p>
-	<p>{{ event.sponsor }}</p>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
