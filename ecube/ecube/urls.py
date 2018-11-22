@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^competitors/', include('competitors.urls', namespace='competitors')),
     url(r'^events/', include('events.urls', namespace='events')),
     url(r'^sponsors/', include('sponsors.urls')),
 ]

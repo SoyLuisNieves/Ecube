@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'events',
     'sponsors',
+    'competitors',
 ]
 
 MIDDLEWARE_CLASSES = [

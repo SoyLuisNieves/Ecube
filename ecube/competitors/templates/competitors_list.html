@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Competitors - Ecube</title>
+</head>
+<body>
+	<h1>Competitors List</h1>
+
+	{% for competitor in competitors %}
+		<a href="{{ competitor.id }}"><h2>{{ competitor.first_name }} {{ competitor.last_name }}</h2></a>
+	{% endfor %}
+</body>
+</html>
